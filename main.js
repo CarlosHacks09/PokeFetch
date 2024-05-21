@@ -5,7 +5,7 @@ const errmsg = $("#errmsg")[0];
 
 console.log(button)
 
-const pokemon_limit = 1302;
+const pokemon_limit = 20;
 
 async function fetchManyPokemons(limit) {
     const offset = 0;
