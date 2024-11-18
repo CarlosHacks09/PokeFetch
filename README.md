@@ -1,2 +1,1 @@
-# PokeFetch
-Interactive website that hosts all of the Pokemon with their respective sprites, stats and more info.
+Simple website that generates a card with different stats and information about a requested Pokemon creature (previously specified in the program's code), using data from PokeAPI. 
