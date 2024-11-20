@@ -1,58 +1,95 @@
+:root {
+  --primary: #2a2a2a;
+  --secondary: #3d3d3d;
+  --accent: orange;
+  --text: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
 html {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  background-color: #1b1b1b;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--primary);
+  color: var(--text);
 }
 
 .tarjeta {
-  height: 510px;
+  height: 530px;
   width: 400px;
-  border: 5px solid orange;
-  border-radius: 30px;
-  padding: 20px;
+  background: var(--secondary);
+  border: none;
+  border-radius: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: transform 0.3s ease-in-out;
-  background-color: gray;
+  box-shadow: 0 8px 24px var(--shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
 }
 
 #buscar {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: inherit;
+  background: var(--secondary);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+
+#buscar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
 }
 
 .tarjetas {
   display: flex;
   flex-flow: row wrap;
-  gap: 15px;
+  gap: 24px;
   justify-content: center;
   align-items: center;
-  min-height: 100vh
+  min-height: 100vh;
+  padding: 32px;
 }
 
 .nombre {
   text-align: center;
-  font-size: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), #b388ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .imgcon {
   display: flex;
   justify-content: center;
   overflow: hidden;
+  border-radius: 12px;
+  margin: 16px 0;
 }
 
 .img {
   height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.img:hover {
+  transform: scale(1.05);
 }
 
 .tipo {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .habilidad {
   display: flex;
   justify-content: space-around;
-  font-size: 20px;
+  padding: 16px 0;
 }
 
 .bar {
@@ -114,9 +151,9 @@ header {
 }
 
 .tarjeta:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 0 20px orange, 0 0 5px orange;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px var(--shadow);
+  border: 1px solid rgba(124, 77, 255, 0.2);
 }
 
 .popup {
@@ -158,4 +195,20 @@ header {
 
 .hidden {
   display: none;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px var(--accent);
+  }
+  to {
+    text-shadow: 0 0 30px var(--accent);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .tarjeta, .img, .nombre {
+    animation: none;
+    transition: none;
+  }
 }
