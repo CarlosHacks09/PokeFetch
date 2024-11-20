@@ -1,6 +1,7 @@
 **PokeFetch**
 
-![imagen](https://github.com/user-attachments/assets/a5b322fe-a8ac-4ec9-832e-e855c5f1512f)
+![imagen](https://github.com/user-attachments/assets/f2713038-f48e-44e7-ab6b-f5bcf66c8e37)
+
 
 
 PokeFetch is a web application that allows users to explore data from the Pokémon universe. Using the Pokémon API, this project fetches detailed information about Pokémon, including their stats, abilities, and more. The goal of the app is to create a simple yet engaging way to interact with Pokémon data in a clean and user-friendly interface.
